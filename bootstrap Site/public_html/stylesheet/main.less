@@ -1,0 +1,397 @@
+/*
+    VARIABLES
+*/
+@color-base: #26334A;
+@color-headers: #493D26;
+@font-Source: 'Source Sans Pro', sans-serif;
+@font-Playfair: 'Playfair Display', serif;
+@font-OldStandard: 'Old Standard TT', serif;
+
+/*
+    ANIMATION VARIABLES
+*/
+
+@-webkit-keyframes pulse-icon {
+  0% {
+    height: 0;
+    width: 0;
+  }
+  30% {
+    opacity: 1;
+    border-width: 1em;
+    height: 2em;
+    width: 2em;
+  }
+  100% {
+    opacity: 0;
+    border-width: 0;
+    height: 2em;
+    width: 2em;
+  }
+}
+@keyframes pulse-icon {
+  0% {
+    height: 0;
+    width: 0;
+  }
+  30% {
+    opacity: 1;
+    border-width: 1em;
+    height: 5em;
+    width: 5em;
+  }
+  100% {
+    opacity: 0;
+    border-width: 0;
+    height: 5em;
+    width: 5em;
+  }
+}
+
+@-webkit-keyframes loader-label {
+  0% {
+    opacity: .35;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .35;
+  }
+}
+@keyframes loader-label {
+  0% {
+    opacity: .35;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .35;
+  }
+}
+
+/*
+    MIXINS
+*/
+
+.border-radius (@radius: 1px) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+.transition (@prop: all, @time: 1s, @ease: linear) {
+  -webkit-transition: @prop @time @ease;
+     -moz-transition: @prop @time @ease;
+       -o-transition: @prop @time @ease;
+      -ms-transition: @prop @time @ease;
+          transition: @prop @time @ease;
+}
+.translate-loader (@translateX: 0%, @translateY: 0%) {
+  -webkit-transform: translate(@translateX, @translateY);
+      -ms-transform: translate(@translateX, @translateY);
+          transform: translate(@translateX, @translateY);
+}
+.animation-loader (@prop: all, @time: 1s, @ease: linear, @easeX: linear) {
+  -webkit-animation: @prop @time @ease @easeX;
+          animation: @prop @time @ease @easeX;
+}
+
+/**************************************************************************
+
+                              MAIN CSS
+
+***************************************************************************/
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+/**************************************************************************
+
+                           CSS FOR LOADER
+
+***************************************************************************/
+
+#loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+  background: @color-base;
+}
+
+/* LOADING ICON */
+
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 150px;
+  height: 150px;
+
+  border: 3px solid #9B7F50;
+  border-radius: 50%;
+  z-index: 1001;
+
+  .translate-loader(-50%, -50%);
+  .animation-loader(pulse-icon, 1s, infinite, linear);
+}
+/* LOADING HEADER */
+#loader-wrapper p {
+  float: left;
+  margin-left: 50%;
+  margin-top: 30%;
+  transform: translateX(-50%);
+  letter-spacing: .1em;
+  font-size: 2em;
+  font-family: @font-OldStandard;
+
+  .animation-loader(loader-label, 1s, infinite, linear);
+}
+
+/*===============
+  FADE OUT LOADER FIRST
+================*/
+.loaded #loader {
+  opacity: 0;
+  -webkit-transition: all .3s ease-out;
+          transition: all .3s ease-out;
+}
+/*===============
+  FADE OUT LOADER WRAPPER
+================*/
+.loaded #loader-wrapper{
+  visibility: hidden;
+
+  -webkit-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+          transform: translateY(-100%);
+
+  -webkit-transition: all .3s .6s ease-out;
+          transition: all .3s .6s ease-out;
+}
+/*===============
+  DISPLAY NONE IF JS NOT ENABLED
+================*/
+.no-js #loader-wrapper{
+  display: none;
+}
+
+/**************************************************************************
+
+                           CSS FOR NAVBAR
+
+***************************************************************************/
+
+nav {
+  text-align: center;
+  background-color: rgba(255,255,255,0);
+  padding: 10px;
+}
+nav a {
+  font-family: @font-Source;
+  color: white;
+  font-size: 1.4em;
+}
+.navbar-fixed-top{
+  z-index: 999;
+}
+nav a.navLink:hover {
+  background-color: rgba(255,255,255,0);
+}
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  .transition(all, .1s, ease-in);
+}
+.navbar .navbar-collapse {
+  text-align: center;
+}
+.navbar-collapse.collapse.in a {
+    color: @color-base;
+    .transition(all, .1s, linear);
+}
+.navbar-collapse.collapse.in {
+  background-color: white;
+  .transition(all, .1s, linear);
+}
+.navbar-brand {
+  font-family: @font-OldStandard;
+  font-size: 1.6em;
+  .transition(all, .1s, ease-in);
+  display: none;
+}
+.icon-bar {
+  background-color: white;
+}
+nav.small .icon-bar {
+  background-color: @color-base;
+}
+nav.small {
+  background-color: white;
+  padding: 0;
+}
+nav.small a {
+  color: @color-base;
+  font-size: 1.2em;
+}
+nav.small .navbar-brand {
+  font-size: 1.2em;
+  display: inherit;
+}
+
+/**************************************************************************
+
+                           CSS FOR HEADER
+
+***************************************************************************/
+
+
+header {
+  background:
+    linear-gradient(
+      rgba(0,0,0,.25),
+      rgba(0,0,0,.25)
+      ),
+      url('../pics/boats.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  overflow: auto;
+}
+#landingDiv {
+  width: 100%;
+  padding: 0 10px 0 10px;
+  position: absolute;
+  overflow: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: white;
+  text-align: center;
+}
+#landingDiv h1 {
+  font-size: 4em;
+  font-weight: bold;
+  font-family: @font-OldStandard;
+  text-transform: uppercase;
+  text-shadow: 2px 2px @color-base;
+}
+#landingDiv h2 {
+  font-style: italic;
+  font-family: @font-OldStandard;
+  text-shadow: 2px 2px @color-base;
+}
+
+/**************************************************************************
+
+                           CSS FOR BODY
+
+***************************************************************************/
+
+.bodyDiv {
+  font-family: @font-Source;
+  font-size: 1.1em;
+  text-align: center;
+  padding: 15px;
+  background-color: white;
+  min-height: 100vh;
+  height: auto;
+}
+.bodyDiv h2 {
+  margin-top: 50px;
+  font-family: @font-OldStandard;
+  color: @color-base;
+}
+
+/**************************************************************************
+
+                           CSS FOR PORTFOLIO
+
+***************************************************************************/
+
+.table-Header {
+   padding: 15px;
+   text-align: center;
+   color: @color-base;
+   font-family: @font-Source;
+   //font-size: 1.2em;
+   //text-transform: uppercase;
+}
+.pagePics {
+  width: 100%;
+  .border-radius(5px);
+  margin-bottom: 15px;
+}
+.opacityChange {
+  opacity: 1;
+  .transition(opacity, .1s, ease-in);
+
+  box-shadow: 0px 0px 3px @color-base;
+  .transition(box-shadow, .1s, ease-in);
+}
+.opacityChange:hover {
+  opacity: .75;
+  box-shadow: 0px 0px 10px @color-base;
+}
+
+/**************************************************************************
+
+                           CSS FOR GALLERY
+
+***************************************************************************/
+
+#gallery img {
+  margin: 5px;
+  .border-radius(5px);
+  width: 15%;
+  vertical-align: top;
+}
+#gallery {
+  background-color: @color-base;
+}
+#gallery h2 {
+  color: white;
+}
+
+/**************************************************************************
+
+                           CSS FOR ABOUT ME
+
+***************************************************************************/
+
+#aboutInfo {
+  border-top: 1px solid @color-base;
+  padding-top: 15px;
+  margin-top: 15px;
+}
+#aboutInfo img {
+  padding: 10px;
+  width: 25%;
+}
+#aboutInfo img:hover {
+  opacity: .5;
+}
+
+/**************************************************************************
+
+                        CSS FOR BUTTON TO TOP
+
+***************************************************************************/
+
+.back-to-top {
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+}
+.back-to-top:hover {
+  color: maroon;
+}

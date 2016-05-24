@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>MSR Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="pics/favicon-96x96.png" />
+
+    <!-- jQuery Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
+    <!-- BOOTSTRAP CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- BOOTSTRAP Javascript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <!-- GOOGLE FONTS -->
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
+
+    <!-- MINE OWN CSS -->
+    <link href="stylesheet/main.css" rel="stylesheet" type="text/css" />
+
+    <!-- MINE OWN JS -->
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid" style="padding: 0;">
+      <div id="loader-wrapper">
+        <div id="loader"></div>
+        <p style="color: white;">WELCOME</p>
+      </div>
+        <!-- COLLAPSABLE NAVBAR -->
+        <header>
+            <nav class="navbar navbar-fixed-top">
+                <div class="container">
+                    <!-- NAVBAR WHEN PAGE IS SMALLER -->
+                    <div class="navbar-header ">
+                        <a class="navbar-brand" href="#">MATTHEW ROTHE'S PORTFOLIO</a>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavBar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <!-- NAVBAR WHEN PAGE IS NORMAL -->
+                    <div class="collapse navbar-collapse" id="myNavBar">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a class="navLink" href="#portfolio"><span class="glyphicon glyphicon-folder-open"></span>&nbsp Portfolio</a></li>
+                            <li><a class="navLink" href="#gallery"><span class="glyphicon glyphicon-picture"></span>&nbsp Gallery</a></li>
+                            <li><a class="navLink" href="#about"><span class="glyphicon glyphicon-list"></span>&nbsp About</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- DIV FOR THE TEXT ON IMAGE -->
+            <div id="landingDiv">
+                <h1>Personal Website</h1>
+                <h2>~ of ~</h2>
+                <h1>Matthew Steven Rothe</h1>
+            </div>
+        </header>
+
+
+        <div class="bodyDiv" id="portfolio">
+            <h2>PORTFOLIO</h2>
+            <hr />
+            <div class="container">
+                <div class="row">
+                    <div id="collegeSite" class="col-xs-12 col-md-6">
+                        <h4 class="table-Header">College Class Website <hr style="width: 50%;" /></h4>
+                        <a target="blank" href="http://www.technisoftcorp.com/itdev161/fall15/rothems/index.html">
+                            <img class="opacityChange pagePics" src="pics/SchoolWebsiteScreenshot.png" alt="School Website Screenshot" />
+                        </a>
+                    </div>
+                    <div id="otherSite" class="col-xs-12 col-md-6">
+                        <h4 class="table-Header">Future Website Stuff <hr style="width: 50%;" /></h4>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="overflow: auto;" class="bodyDiv" id="gallery">
+            <h2>GALLERY</h2>
+            <hr />
+            <img src="pics/GalleryStuff/AT_Man.png" alt="Adventure Time Man" />
+            <img src="pics/GalleryStuff/BeardMan.png" alt="Bearded Man" />
+            <img src="pics/GalleryStuff/Beauty.jpg" alt="Woman with red lips" />
+            <img src="pics/GalleryStuff/Bunny.jpg" alt="Bunny Ball" />
+            <img src="pics/GalleryStuff/Egg.png" alt="I like eggs..." />
+        </div>
+        <div class="bodyDiv" id="about">
+            <h2>ABOUT ME</h2>
+            <hr />
+            <div class="container">
+                <div class="row">
+                    <div id="aboutPic" class="col-xs-12 col-md-6">
+                        <a target="blank" style="text-decoration: none;" href="mailto:matthewsrothe@gmail.com?Subject=Salutations!" target="_top">
+                            <img class="opacityChange pagePics" src="pics/mytie.png" alt="Anime Matthew" />
+                        </a>
+                        <br />
+                        <br />
+                        <div style="margin: auto; width: 75%;">
+                            <p>
+                                <em>Twenty-five-year-old man who loves listening to music, playing video games, watching movies/TV shows,
+                  and creating websites.<hr />
+                My goal is to use the skills I've learned, either through schooling or during my own time, to obtain
+              a job as a Front End Web Developer.<hr />
+                Thank you for taking the time to look at what I have to offer and if you have any questions,
+              please feel free to e-mail me by clicking on my face!</em>
+
+                            </p>
+                        </div>
+                    </div>
+                    <div id="aboutInfo" class="col-xs-12 col-md-6">
+                        <h4>To learn more about me, follow the links below...</h5>
+                        <a href="https://www.linkedin.com/in/matthewsrothe" target="_blank"><img src="pics/inLogoBlue.jpg" alt="LinkedIn Icon Blue" /></a>
+                        <a href="https://www.facebook.com/matthew.rothe.5" target="_blank"><img src="pics/fbLogoBlue.png" alt="Facebook Icon Blue" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a id="back-to-top" href="#" class="btn back-to-top" role="button" title="Return back to the top!" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-arrow-up"></span></a>
+    </div>
+</body>
+
+</html>
