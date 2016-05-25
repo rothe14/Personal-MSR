@@ -2,7 +2,7 @@ $(document).ready(function() {
     setTimeout(function(){
        $('body').addClass('loaded');
 
-    }, 3000);
+    }, 2500);
 
     //function to smooth scroll to selected Div section
     $("a.navLink").on('click', function(event) {
