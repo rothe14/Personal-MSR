@@ -1,8 +1,10 @@
 /*
     VARIABLES
 */
-@color-base: #26334A;
-@color-headers: #493D26;
+@color-base: #4a8aff;
+@color-secondary: #77a7ff;
+@color-tertiary: #9cbfff;
+@color-accent: #ffb937;
 @font-Source: 'Source Sans Pro', sans-serif;
 @font-Playfair: 'Playfair Display', serif;
 @font-OldStandard: 'Old Standard TT', serif;
@@ -134,7 +136,7 @@ html, body {
   width: 150px;
   height: 150px;
 
-  border: 3px solid #9B7F50;
+  border: 3px solid @color-accent;
   border-radius: 50%;
   z-index: 1001;
 
@@ -254,8 +256,8 @@ nav.small .navbar-brand {
 header {
   background:
     linear-gradient(
-      rgba(0,0,0,.25),
-      rgba(0,0,0,.25)
+      rgba(0,0,0,.75),
+      rgba(0,0,0,.75)
       ),
       url('../pics/boats.jpg');
   background-size: cover;
@@ -386,7 +388,7 @@ header {
   border: 2px solid white;
 }
 #resumeBtn:hover {
-  background-color: lighten(@color-base, 10%);
+  background-color: @color-secondary;
 }
 #resumeBtn a {
   color: white;
@@ -407,5 +409,5 @@ header {
   display: none;
 }
 .back-to-top:hover {
-  color: maroon;
+  color: @color-accent;
 }
